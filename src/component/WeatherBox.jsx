@@ -1,12 +1,14 @@
 import React from 'react'
 
-const WeatherBox = () => {
+const WeatherBox = ({ weather }) => { 
+  console.log('weather?', weather )
+
   return (
     <div className='weatherBoxContainer'>
       <div className='blur'>
-        <div>Toronto</div>
-        <h2>30도 / 230화씨</h2>
-        <h3>Clean Sky</h3>
+        <div>{weather?.name}</div>
+        <h2>{weather?.main.temp}</h2>
+        <h3>{weather?.weather[0].description}</h3>
       </div>
     </div>
   )

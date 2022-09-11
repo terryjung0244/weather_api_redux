@@ -1,0 +1,22 @@
+body {
+  background: url(https://c.wallhere.com/photos/01/d9/minimalism_rain_clouds-1355659.jpg!d);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainContainer {
+  height: 100vh;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weatherBoxContainer {
+  padding: 50px;
+  border: 3px solid white;
+  border-radius: 20px;
+  background-color: white
+}

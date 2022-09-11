@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import WeatherBox from './component/WeatherBox';
+import WeatherButton from './component/WeatherButton';
 
 const App = () => {
 
@@ -11,7 +15,8 @@ const App = () => {
     });
 
     const getWeahterByCurrentLocation = async (lat, lon) => {
-      let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=4b917ff881afce42f8453ca1be779805`
+      const API_KEY = '4b917ff881afce42f8453ca1be779805'
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
       let response = await fetch(url)
       let data = await response.json();
       console.log('data', data)
@@ -25,7 +30,10 @@ const App = () => {
 
   return (
     <div>
-      App
+      <div className='mainContainer'>
+        <WeatherBox />
+        <WeatherButton/>
+      </div>
     </div>
   )
 }

@@ -6,9 +6,9 @@ const WeatherBox = ({ weather }) => {
   return (
     <div className='weatherBoxContainer'>
       <div className='blur'>
-        <div>{weather?.name}</div>
+        {/* <div>{weather?.name}</div>
         <h2>{weather?.main.temp}</h2>
-        <h3>{weather?.weather[0].description}</h3>
+        <h3>{weather?.weather[0].description}</h3> */}
       </div>
     </div>
   )

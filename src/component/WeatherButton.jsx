@@ -1,13 +1,17 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
 
-const WeatherButton = () => {
+const WeatherButton = ({ cities, setCity }) => {
+
   return (
     <div>
-      <Button variant="warning">Current Location</Button>
-      <Button variant="warning">Pyungyang</Button>
-      <Button variant="warning">Seoul</Button>
-      <Button variant="warning">New deli</Button>
+      <div>
+        {cities.map((item, index) => {
+          return (
+            <Button variant="warning" key={index} onClick={() => setCity(item)}>{item}</Button> //item을 적으면, key={}값은 적지 않아도 되는건가?...
+          )
+        })}
+      </div>
     </div>
   )
 }

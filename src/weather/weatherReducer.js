@@ -10,7 +10,7 @@ const {
 const initialState = {
   weather: {
     data: null,
-    loading: false
+    loading: true
   },
 }
 

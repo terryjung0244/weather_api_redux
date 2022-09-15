@@ -17,3 +17,4 @@ export const getWeahterByCurrentLocationSuccess = () => ({
 export const getWeahterByCurrentLocationFailure = () => ({
   type: GET_WEATHER_BY_CURRENT_LOCATION_FAILURE, payload: ''
 });
+

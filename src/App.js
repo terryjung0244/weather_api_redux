@@ -5,6 +5,7 @@ import WeatherBox from './component/WeatherBox';
 import WeatherButton from './component/WeatherButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeahterByCurrentLocationRequest } from './weather/weatherAction';
+import ClipLoader from "react-spinners/ClipLoader";
 
 const App = () => {
 
@@ -55,13 +56,15 @@ const App = () => {
     }
   }, [city])
 
+  console.log(weatherReducerSelector.weather.loading)
+
   return (
     <div>
       <div className='mainContainer'>
         <WeatherBox weather={weather}  />
         <WeatherButton cities={cities} setCity={setCity} />
         <div style={{height: '25px'}}>
-          {weatherReducerSelector.weather.loading ? <div>Loading...</div> : <div></div>}     
+          {weatherReducerSelector.weather.loading ? <div><ClipLoader color='f88c6b' loading={loading} size={150} /></div> : <div></div>}     
         </div>
       </div>
     </div>

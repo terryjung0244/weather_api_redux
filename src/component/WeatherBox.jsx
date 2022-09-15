@@ -3,6 +3,7 @@ import React from 'react'
 const WeatherBox = ({ weather }) => { 
   console.log('weather?', weather)
   console.log('아녕')
+  console.log('아아아아녕')
 
   return (
     <div className='weatherBoxContainer'>

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherBox from './component/WeatherBox';
 import WeatherButton from './component/WeatherButton';
 import { useDispatch, useSelector } from 'react-redux';
-import { getWeahterByCurrentLocationRequest, setPosition } from './weather/weatherAction';
+import { getWeahterByCurrentLocationRequest, setPosition, getWeatherByCityRequest } from './weather/weatherAction';
 import ClipLoader from "react-spinners/ClipLoader";
 
 const App = () => {
@@ -40,8 +40,8 @@ const App = () => {
   // };
 
 
-  const setCity = async (country) => {
-    console.log(country);
+  const setCity = (country) => {
+    dispatch(getWeatherByCityRequest(country))
     // setLoading(true);
     // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
     // let response = await fetch(url);
@@ -50,6 +50,7 @@ const App = () => {
     // setLoading(false);
   }
 
+  // 유저 현재 위치 받아와.
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((paramPosition) => {
       dispatch(setPosition({
@@ -59,6 +60,7 @@ const App = () => {
     });
   }, []);
 
+  // 날씨 API based on position
   useEffect(() => {
     if(weatherData.position) {
       dispatch(getWeahterByCurrentLocationRequest())
@@ -73,7 +75,7 @@ const App = () => {
 
   // console.log(weatherReducerSelector.weather.loading)
 
-  console.log(weatherData.loading)
+  console.log(weatherData.city)
 
   return (
     <div>
